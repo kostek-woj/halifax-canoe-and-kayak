@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+:root {
+    --blue: #2a5196;
+    --menu-height: 60px;
+}
+
+/* HEADER */
+
+body {
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    line-height: 1.25;
+}
+
+header {
+    background-color: var(--blue);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    display: block;
+    flex-wrap: nowrap;
+    height: var(--menu-height);
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+nav > a {
+    align-items: center;
+    display: flex;
+    padding-left: 0.5em;
+    text-decoration: none;
+}
+
+/* Header: Logo */
+
+nav figure {
+    height: var(--menu-height);
+    margin: 0;
+}
+
+nav figure img {
+    height: 100%;
+}
+
+/* Header: Company name  */
+
+.company-name {
+    align-items: center;
+    display: flex;
+}
+
+.company-name p {
+    color: #fff;
+    display: none;
+    font-family: 'Passion One', sans-serif;
+    font-size: 1.25em;
+    margin: 0;
+}
+
+@media only screen and (min-width: 260px) {
+    .company-name p {
+        display: block;
+        font-size: 1.25em;
+        transition: font-size 0.25s ease-in-out;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .company-name p {
+        font-size: 2em;
+        transition: font-size 0.25s ease-in-out;
+    }
+}
+
+/* Header: Menu lists reset */
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header li a {
+    color: #fff;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header: Hamburger menu */
+
+.hamburger-menu {
+    cursor: pointer;
+    display: block;
+    padding: 0 1.25em
+}
+
+.bar {
+    background-color: #fff;
+    display: block;
+    height: 3px;
+    margin: 5px auto;
+    width: 25px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media only screen and (min-width: 640px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+/* Header: Mobile menu */
+
+.mobile-menu {
+    display: flex;
+    height: 0;
+    justify-content: end;
+    overflow: hidden;
+    transition: height .25s ease-in-out;
+    width: 100%;
+}
+
+.mobile-menu.active {
+    display: flex;
+    height: calc(100vh - var(--menu-height));
+    transition: height .25s ease-in-out;
+}
+
+.mobile-menu ul {
+    background: var(--blue);
+    opacity: 0.85;
+    padding: 2em;
+    width: 25%;
+}
+
+.mobile-menu ul li {
+    opacity: 0;
+    padding-bottom: 1em;
+    position: relative;
+    right: calc(-100% - 2em);
+    transition: opacity 0.25s;
+}
+
+.mobile-menu.active ul li {
+    opacity: 1;
+    right: 0;
+    transition: right 0.25s ease-in-out;
+    transition-delay: 0.25s;
+}
+
+/* Header: Desktop menu */
+
+nav li {
+    padding-right: 1.5em;
+}
+
+@media only screen and (min-width: 640px) {
+    nav ul {
+        display: flex;
+    }
+}
+
+/* HERO */
+
+.hero {
+    align-items: center;
+    background-image: url('../img/canoe.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 3em;
+    line-height: 1.2;
+    text-shadow: 0 0 5px #000;
+}
