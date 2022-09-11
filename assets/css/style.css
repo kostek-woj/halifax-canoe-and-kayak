@@ -382,6 +382,8 @@ main section figure img {
 }
 
 .adventure-data figure {
+    position: relative;
+    top: 2px;
     width: 16px;
 }
 
@@ -426,4 +428,146 @@ main section figure img {
     font-size: 1.25em;
     font-weight: 700;
     padding-bottom: .25em;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    padding: 1em;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer-item h4 {
+    font-size: 1.25em;
+    padding-bottom: 0.75em;
+}
+
+.footer-item p {
+    padding-bottom: 0.5em;
+}
+
+.footer-item a {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 480px) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer-item {
+        width: calc(50% - 3em);
+    }
+
+    .footer-item:last-child {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-container {
+        flex-wrap: nowrap;
+    }
+
+    .footer-item,
+    .footer-item:last-child {
+        width: 33.3333%;
+    }
+}
+
+/* Footer: Contact Form */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.form.sent {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.form input,
+.form textarea {
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    padding: 0.25em;
+    resize: none;
+    width: 95%;
+}
+
+.form label {
+    display: block;
+    padding-bottom: .25em;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    box-shadow: 0 0 5px #000;
+    color: var(--blue);
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 1em;
+    padding: .5em 1em;
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--blue-light);
+    box-shadow: 0 0 0 #000;
+    transition: box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+a.btn {
+    color: var(--blue);
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+    text-align: center;
+    width: 50%;
+}
+
+.form-sent {
+    display: none;
+}
+
+.form-sent.sent {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer: Address */
+
+
+/* Footer: Map */
+
+#map {
+    height: 300px;
 }
